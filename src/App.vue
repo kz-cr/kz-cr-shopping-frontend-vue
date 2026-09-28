@@ -129,7 +129,7 @@ onMounted(loadItems)
                 v-if="imageUrl(item)"
                 class="art-image"
                 :src="imageUrl(item)"
-                :alt="item.primary_image?.alt || item.title"
+                :alt="item.primary_image?.alt || item.ProductName"
                 :loading="index < 4 ? 'eager' : 'lazy'"
                 :fetchpriority="index < 2 ? 'high' : 'auto'"
               />
@@ -141,7 +141,7 @@ onMounted(loadItems)
 
             <div class="art-details">
               <div>
-                <h3>{{ item.title }}</h3>
+                <h3>{{ item.ProductName }}</h3>
                 <p class="artist">{{ item.artist }}, {{ item.year }}</p>
               </div>
               <p class="price">{{ formatPrice(item) }}</p>
